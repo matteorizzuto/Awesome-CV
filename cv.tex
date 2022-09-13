@@ -18,7 +18,7 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -26,9 +26,9 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-emerald}
+\colorlet{awesome}{awesome-nephritis}
 % Uncomment if you would like to specify your own color
-\definecolor{awesome}{HTML}{414141}
+% \definecolor{awesome}{HTML}{414141}
 
 % Colors for text
 % Uncomment if you would like to specify your own color
@@ -39,11 +39,24 @@
 % \definecolor{sectiondivider}{HTML}{5D5D5D}
 
 % Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{true}
+\setbool{acvSectionColorHighlight}{false}
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\renewcommand*{\cventry}[5]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\ifempty{#1#4}{}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} 
+       \ifempty{#1#4}{}{\\\entrypositionstyle{#1} & \entrydatestyle{#4}}}
+    \ifempty{#5}{}{\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+  \par % <============================================================== missing in class
+}
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -59,8 +72,8 @@
 \email{matteomrizzuto@gmail.com}
 %\dateofbirth{December 12th, 1985}
 \homepage{https://matteorizzuto.github.io}
-\github{matteorizzuto}
-\linkedin{matteorizzuto}
+% \github{matteorizzuto}
+% \linkedin{matteorizzuto}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 \twitter{@MatteoRiz}
@@ -72,7 +85,7 @@
 %% \firstname and \lastname will be used
 \googlescholar{JkHYiIEAAAAJ}{Matteo Rizzuto}
 \orcid{0000-0003-3065-9140}
-\researchgate{Matteo Rizzuto}
+% \researchgate{Matteo Rizzuto}
 % \extrainfo{extra information}
 
 % \quote{``Be the change that you want to see in the world."}
@@ -84,6 +97,7 @@
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader
+
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
