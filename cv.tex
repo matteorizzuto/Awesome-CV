@@ -1,3 +1,5 @@
+% REVIEW RELEVANT EXP AND DETAILS OF POSITIONS FOR ACTION VERBS AT BEGINNING
+
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 % Awesome CV LaTeX Template for CV/Resume
@@ -39,7 +41,7 @@
 % \definecolor{sectiondivider}{HTML}{5D5D5D}
 
 % Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{false}
+\setbool{acvSectionColorHighlight}{true}
 
 % Uncomment if you want to highlight with awesome color the whole section title
 % \makeatletter
@@ -55,12 +57,35 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}
-      {\ifempty{#1#4}{}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}}
+      {\ifempty{#1#4}{}{\entrypositionstyle{#1} & \entrydatestyle{#4}}}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} 
        \ifempty{#1#4}{}{\\\entrypositionstyle{#1} & \entrydatestyle{#4}}}
     \ifempty{#5}{}{\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
   \end{tabular*}%
   \par % <============================================================== missing in class
+}
+
+% Define a subentry of cv information
+% Usage: \cvsubentry{<position>}{<title>}{<date>}{<description>}
+\renewcommand*{\cvsubentry}[4]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \setlength\leftskip{0.2cm}
+    \subentrypositionstyle{#1}, %\ifthenelse{\equal{#1}{}}
+    %   {\subentrydatestyle{#3}}{}
+    % \ifthenelse{\equal{#1}{}}
+    %   {}
+    %   {
+      \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
+    %   }
+    % \ifthenelse{\equal{#4}{}}
+    %   {}
+    %   {
+      \multicolumn{2}{L{18.25cm}}{\subdescriptionstyle{#4}} \\
+    % }
+  \end{tabular*}
+  \par
 }
 
 %-------------------------------------------------------------------------------
@@ -71,11 +96,11 @@
 % \photo{/Users/matteo/matteorizzuto.github.io/images/avatar.jpeg}
 \name{Matteo}{Rizzuto}
 \position{Postdoctoral Associate{\enskip\cdotp\enskip}School of the Environment, Yale University}
-\address{Greeley Memorial Lab, 370 Prospect St., 06511, New Haven CT, USA}
+% \address{Greeley Memorial Lab, 370 Prospect St., 06511, New Haven CT, USA}
 
-\mobile{+1 (203) 627-5825}
-\email{matteomrizzuto@gmail.com}
-%\dateofbirth{December 12th, 1985}
+% \mobile{+1 (203) 627-5825}
+% \email{matteomrizzuto@gmail.com}
+% \dateofbirth{December 12th, 1985}
 \homepage{https://matteorizzuto.github.io}
 % \github{matteorizzuto}
 % \linkedin{matteorizzuto}
@@ -116,15 +141,22 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\input{cv/experience.tex}
 \input{cv/education.tex}
+\input{cv/experience.tex}
 \input{cv/publications.tex}
-\input{cv/skills.tex}
-\input{cv/extracurricular.tex}
-\input{cv/honors.tex}
 \input{cv/presentation.tex}
-\input{cv/writing.tex}
-\input{cv/committees.tex}
+\input{cv/honors.tex}
+\input{cv/teaching.tex}
+\input{cv/service.tex}
+\input{cv/profdev.tex}
+\input{cv/extracurricular.tex}
+\input{cv/profaffil.tex}
+\input{cv/conferences.tex}
+% \newpage
+\input{cv/skills.tex}
+\input{cv/certificate.tex}
+\input{cv/interests.tex}
+\input{cv/references.tex}
 
 
 %-------------------------------------------------------------------------------

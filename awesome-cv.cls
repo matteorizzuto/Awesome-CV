@@ -81,12 +81,13 @@
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
-\RequirePackage[hidelinks,unicode,pdfpagelabels=false]{hyperref}
+\RequirePackage[colorlinks=true,unicode,pdfpagelabels=false]{hyperref}
 \hypersetup{%
   pdftitle={},
   pdfauthor={},
   pdfsubject={},
-  pdfkeywords={}
+  pdfkeywords={},
+  urlcolor=[HTML]{172458}
 }
 % Solves issues Warning: File `cv.out' has changed
 \RequirePackage{bookmark}
@@ -159,6 +160,9 @@
   \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
 }
 
+% Awesome section color for full word
+% \def\@sectioncolor{\color{awesome}}
+
 
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
@@ -175,39 +179,39 @@
 % Configure styles for each CV elements
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
-\newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
-\newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\newcommand*{\headeraddressstyle}[1]{{\fontsize{9pt}{1em}\headerfont\itshape\color{lighttext} #1}}
+\newcommand*{\headersocialstyle}[1]{{\fontsize{8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\headerfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\scshape\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{text} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
-\newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
-\newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
+\newcommand*{\subentrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\subentrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\subentrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\subdescriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of honor
-\newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\honortitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skilltypestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -396,8 +400,8 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{.4mm}
-\newcommand{\acvHeaderAfterPositionSkip}{.4mm}
+\newcommand{\acvHeaderAfterNameSkip}{.5mm}
+\newcommand{\acvHeaderAfterPositionSkip}{.5mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
@@ -649,8 +653,8 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\
+      \entrytitlestyle{#2} & \entrylocationstyle{#3} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
@@ -661,21 +665,26 @@
 }{%
   \end{center}
 }
+
 % Define a subentry of cv information
 % Usage: \cvsubentry{<position>}{<title>}{<date>}{<description>}
 \newcommand*{\cvsubentry}[4]{%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
-    \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
-      {\subentrydatestyle{#3}}{}
-    \ifthenelse{\equal{#1}{}}
-      {}
-      {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
-    \ifthenelse{\equal{#4}{}}
-      {}
-      {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
+    \subentrypositionstyle{#1}, %\ifthenelse{\equal{#1}{}}
+    %   {\subentrydatestyle{#3}}{}
+    % \ifthenelse{\equal{#1}{}}
+    %   {}
+    %   {
+      \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
+    %   }
+    % \ifthenelse{\equal{#4}{}}
+    %   {}
+    %   {
+      \multicolumn{2}{L{18.25cm}}{\subdescriptionstyle{#4}} \\
+    % }
   \end{tabular*}
 }
 
@@ -686,16 +695,22 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
 }{%
     \end{tabular*}
   \end{center}
 }
 % Define a line of cv information(honor, award or something else)
-% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
-\newcommand*{\cvhonor}[4]{%
+% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cvhonor}[5]{%
   \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+  & \descriptionstyle{#5}\\
 }
+
+% Define a line of shorter cv information (honor, award or something else)
+% Usage: \cvhonor{<position>}{<title>}{<date>}
+\newcommand{\mycvhonor}[3]{%
+   \honorpositionstyle{#1}, \honortitlestyle{#2} \hfill \honordatestyle{#3} \\}
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
@@ -727,6 +742,25 @@
   \end{justify}
   \vspace{-4.0mm}
 }
+
+ % new command for adding references in cv
+
+\newcommand*{\emaillink}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+
+ \newcommand{\cvdoublecolumn}[3]{%
+  \begin{minipage}[t]{{.3\linewidth}}#1\end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{{.3\linewidth}}#2\end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{{.3\linewidth}}#3\end{minipage}%
+}
+
+\newcommand{\cvreference}[5]{
+  \entrytitlestyle{#1}\newline
+  \descriptionstyle{#2}\newline
+  \descriptionstyle{#3}\newline
+  \faHome\acvHeaderIconSep~\descriptionstyle{#4}\newline
+  \href{mailto:#5}{\faEnvelope\acvHeaderIconSep~\emaillink{#5}\newline}}
 
 
 %-------------------------------------------------------------------------------

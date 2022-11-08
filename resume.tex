@@ -39,11 +39,24 @@
 % \definecolor{sectiondivider}{HTML}{5D5D5D}
 
 % Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{false}
+\setbool{acvSectionColorHighlight}{true}
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\renewcommand*{\cventry}[5]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\ifempty{#1#4}{}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} 
+       \ifempty{#1#4}{}{\\\entrypositionstyle{#1} & \entrydatestyle{#4}}}
+    \ifempty{#5}{}{\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+  \par % <============================================================== missing in class
+}
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -53,10 +66,10 @@
 % \photo{/Users/matteo/matteorizzuto.github.io/images/avatar.jpeg}
 \name{Matteo}{Rizzuto}
 \position{Postdoctoral Associate{\enskip\cdotp\enskip}School of the Environment, Yale University}
-\address{Greeley Memorial Lab, 370 Prospect St., 06511, New Haven CT, USA}
+% \address{Greeley Memorial Lab, 370 Prospect St., 06511, New Haven CT, USA}
 
-\mobile{+1 (203) 627-5825}
-\email{matteomrizzuto@gmail.com}
+% \mobile{+1 (203) 627-5825}
+% \email{matteomrizzuto@gmail.com}
 %\dateofbirth{December 12th, 1985}
 \homepage{https://matteorizzuto.github.io}
 % \github{matteorizzuto}
@@ -98,13 +111,14 @@
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 \input{resume/summary.tex}
-\input{resume/experience.tex}
-\input{resume/honors.tex}
-\input{resume/presentation.tex}
-\input{resume/writing.tex}
-\input{resume/committees.tex}
 \input{resume/education.tex}
-\input{resume/extracurricular.tex}
+\input{resume/experience.tex}
+\input{resume/publications.tex}
+\input{resume/presentation.tex}
+% \input{resume/honors.tex}
+% \input{resume/teaching.tex}
+% \input{resume/committees.tex}
+% \input{resume/extracurricular.tex}
 
 
 %-------------------------------------------------------------------------------
