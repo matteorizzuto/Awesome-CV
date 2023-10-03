@@ -755,12 +755,14 @@
   \begin{minipage}[t]{{.3\linewidth}}#3\end{minipage}%
 }
 
-\newcommand{\cvreference}[5]{
+\newcommand{\cvreference}[6]{
   \entrytitlestyle{#1}\newline
   \descriptionstyle{#2}\newline
   \descriptionstyle{#3}\newline
   \faHome\acvHeaderIconSep~\descriptionstyle{#4}\newline
-  \href{mailto:#5}{\faEnvelope\acvHeaderIconSep~\emaillink{#5}\newline}}
+  \href{mailto:#5}{\faEnvelope\acvHeaderIconSep~\emaillink{#5}\newline}
+  \faPhone\acvHeaderIconSep~\descriptionstyle{#6}
+  }
 
 
 %-------------------------------------------------------------------------------
