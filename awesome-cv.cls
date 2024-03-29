@@ -711,7 +711,7 @@
 % Define a line of shorter cv information (honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<date>}
 \newcommand{\mycvhonor}[3]{%
-   \honortitlestyle{#1}, \honorpositionstyle{#2} & \honordatestyle{#3}\\}
+   \honortitlestyle{#1} \honorpositionstyle{#2} & \honordatestyle{#3}\\}
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
