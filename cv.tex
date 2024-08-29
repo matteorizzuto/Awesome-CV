@@ -49,60 +49,6 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-% \renewcommand*{\cventry}[5]{%
-%   \vspace{-2.0mm}
-%   \setlength\tabcolsep{0pt}
-%   \setlength{\extrarowheight}{0pt}
-%   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-%     \ifempty{#2#3}
-%       {\ifempty{#1#4}{}{\entrypositionstyle{#1} & \entrydatestyle{#4}}}
-%       {\entrytitlestyle{#2} & \entrylocationstyle{#3} 
-%        \ifempty{#1#4}{}{\\\entrypositionstyle{#1} & \entrydatestyle{#4}}}
-%     \ifempty{#5}{}{\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
-%   \end{tabular*}%
-%   \par % <============================================================== missing in class
-% }
-
-% Define a subentry of cv information
-% Usage: \cvsubentry{<position>}{<title>}{<date>}{<description>}
-\renewcommand*{\cvsubentry}[4]{%
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \setlength\leftskip{0.2cm}
-    \subentrypositionstyle{#1}, %\ifthenelse{\equal{#1}{}}
-    %   {\subentrydatestyle{#3}}{}
-    % \ifthenelse{\equal{#1}{}}
-    %   {}
-    %   {
-      \subentrytitlestyle{#2} & \subentrydatestyle{#3} \\
-    %   }
-    % \ifthenelse{\equal{#4}{}}
-    %   {}
-    %   {
-      \multicolumn{2}{L{18.25cm}}{\subdescriptionstyle{#4}} \\
-    % }
-  \end{tabular*}
-  \par
-}
-
-% Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\renewcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \if\relax\detokenize{#5}\relax\else % THIS LINE ADDED TO CHECK IF LAST ARGUMENT IS EMPTY
-        \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}% ONLY DO THIS IF #5 IS NOT EMPTY
-    \fi % END OF THE IF STATEMENT
-  \end{tabular*}%
-}
-
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
@@ -110,10 +56,10 @@
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[circle,edge,right]{matteo.png}
 \name{Matteo}{Rizzuto}
-\position{Postdoctoral Associate{\enskip\cdotp\enskip}School of the Environment, Yale University}
-% \address{Greeley Memorial Lab, 370 Prospect St., 06511, New Haven CT, USA}
+\position{Visiting Scientist{\enskip\cdotp\enskip}Department of Biology, Memorial University of Newfoundland and Labrador}
+% \address{}
 
-\mobile{+1 (203) 627-5825}
+\mobile{+1 (709) 986-5944}
 \email{matteomrizzuto@gmail.com}
 % \dateofbirth{December 12th, 1985}
 \homepage{matteorizzuto.github.io}
