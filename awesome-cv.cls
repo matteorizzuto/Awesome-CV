@@ -427,6 +427,9 @@
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
+% remove space before itemize
+\setlist[itemize]{noitemsep, topsep=0pt}
+
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of CV structure
