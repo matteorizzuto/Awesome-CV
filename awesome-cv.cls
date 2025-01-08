@@ -472,7 +472,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \href{tel:\@mobile}{\faMobile\acvHeaderIconSep\@mobile}%
+          \href{tel:\@mobile}{\faPhone\acvHeaderIconSep\@mobile}%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
@@ -587,7 +587,8 @@
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%
         {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\quad}%
+          \vspace{-4mm}
           \@extrainfo%
         }%
     } \\[\acvHeaderAfterSocialSkip]%
